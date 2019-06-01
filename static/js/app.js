@@ -83,7 +83,12 @@ function buildCharts(sample) {
 // @TODO: Build a Guage function using the sample data
 function buildGauge(sample){
 // Enter a sample and create level between 0 and 180
-var level = sample * 20-10;
+// Enter a sample and create level between 0 and 180
+if (sample>0) {
+  var level = sample * 20-10;
+} else { 
+  var level = sample + 20-10;
+}
 
 // Scrub meter point
 var degrees = 180 - level , radius = .5;
